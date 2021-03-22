@@ -37,7 +37,6 @@ class _MSolidButtonState extends State<MSolidButton> {
   Widget build(BuildContext context) {
     return SizedBox(
       height: ButtonUtil.sizeToLp(widget.size),
-      width: double.infinity,
       child: TextButton(
         style: widget.style,
         onPressed: widget.onPressed,

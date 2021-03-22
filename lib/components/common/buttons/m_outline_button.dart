@@ -49,7 +49,6 @@ class _MOutlinedButtonState extends State<MOutlinedButton> {
   Widget build(BuildContext context) {
     return SizedBox(
       height: ButtonUtil.sizeToLp(widget.size),
-      width: double.infinity,
       child: OutlinedButton(
         style: widget.style,
         onPressed: widget.onPressed,
