@@ -42,6 +42,13 @@ class MButtonStyles {
     padding: MaterialStateProperty.all(
       const EdgeInsets.symmetric(horizontal: 16),
     ),
+    side: MaterialStateProperty.resolveWith((states) {
+      if (states.contains(MaterialState.disabled)) {
+        return BorderSide(color: MColors.gray[80]);
+      } else {
+        return BorderSide(color: MColors.blue[800]);
+      }
+    }),
     foregroundColor: MaterialStateProperty.resolveWith(
       (states) {
         if (states.contains(MaterialState.disabled)) {
@@ -76,6 +83,13 @@ class MButtonStyles {
     padding: MaterialStateProperty.all(
       const EdgeInsets.symmetric(horizontal: 16),
     ),
+    side: MaterialStateProperty.resolveWith((states) {
+      if (states.contains(MaterialState.disabled)) {
+        return BorderSide(color: MColors.gray[80]);
+      } else {
+        return BorderSide(color: MColors.gray[600]);
+      }
+    }),
     foregroundColor: MaterialStateProperty.resolveWith(
       (states) {
         if (states.contains(MaterialState.disabled)) {

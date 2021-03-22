@@ -2,7 +2,7 @@ import 'package:medihere_ui/constants/constants.dart';
 import 'package:medihere_ui/medihere_ui.dart';
 
 class ButtonUtil {
-  static sizeToLp(ButtonSize size) {
+  static double sizeToLp(ButtonSize size) {
     switch (size) {
       case ButtonSize.xl:
         return 48;

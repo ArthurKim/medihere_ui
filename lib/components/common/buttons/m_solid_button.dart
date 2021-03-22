@@ -35,7 +35,8 @@ class MSolidButton extends StatefulWidget {
 class _MSolidButtonState extends State<MSolidButton> {
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      alignment: Alignment.center,
       height: ButtonUtil.sizeToLp(widget.size),
       child: TextButton(
         style: widget.style,

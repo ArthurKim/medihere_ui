@@ -1,8 +1,8 @@
 name: medihere_ui
 description: A new Flutter package project.
-version: 0.0.2
+version: 0.0.3
 author:
-homepage:
+homepage: 
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
