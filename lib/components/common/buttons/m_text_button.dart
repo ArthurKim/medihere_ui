@@ -65,7 +65,7 @@ class MTextButton extends StatefulWidget {
 class _MTextButtonState extends State<MTextButton> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: ButtonUtil.sizeToLp(widget.size),
       child: TextButton(
         onPressed: widget.onPressed,
