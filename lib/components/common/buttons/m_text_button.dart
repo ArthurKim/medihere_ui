@@ -67,6 +67,7 @@ class _MTextButtonState extends State<MTextButton> {
   Widget build(BuildContext context) {
     return SizedBox(
       height: ButtonUtil.sizeToLp(widget.size),
+      width: double.infinity,
       child: TextButton(
         onPressed: widget.onPressed,
         style: widget.style,
