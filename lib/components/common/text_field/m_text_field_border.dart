@@ -70,12 +70,15 @@ class _MTextFieldBorderState extends State<MTextFieldBorder> {
             textAlign: TextAlign.left,
           ),
           InkWell(
-            onTap: () => widget.focusNode.requestFocus(),
+            onTap: widget.focusNode.hasFocus
+                ? null
+                : () => widget.focusNode.requestFocus(),
             focusColor: Colors.white,
             hoverColor: Colors.white,
             highlightColor: Colors.white,
             splashColor: Colors.black.withAlpha(25),
             child: AbsorbPointer(
+              absorbing: !widget.focusNode.hasFocus,
               child: TextField(
                 focusNode: widget.focusNode,
                 style:
