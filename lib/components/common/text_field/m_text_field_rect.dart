@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:medihere_ui/medihere_ui.dart';
 
+import '../../../constants/constants.dart';
+
 class MTextFieldRect extends StatefulWidget {
   final TextEditingController controller;
   final FocusNode focusNode;
@@ -9,6 +11,7 @@ class MTextFieldRect extends StatefulWidget {
   final String placeholder;
   final TextFieldStatus status;
   final String error;
+  final String btnName;
   final bool obscure;
   final bool enabled;
   final void Function() onEditingCompleted;
@@ -27,7 +30,8 @@ class MTextFieldRect extends StatefulWidget {
       this.enabled = true,
       this.error,
       this.controller,
-      this.obscure})
+      this.obscure,
+      this.btnName = ''})
       : super(key: key);
 
   @override
@@ -169,6 +173,8 @@ class _MTextFieldRectState extends State<MTextFieldRect> {
                           _buildClearButton(),
                           _buildStatusIcon(),
                           _buildObscureButton(),
+                          _buildBtnTextDefaultButton(
+                              btn: widget.btnName, onTap: () {}),
                         ],
                       ),
                     )
@@ -228,6 +234,18 @@ class _MTextFieldRectState extends State<MTextFieldRect> {
       );
     else
       return SizedBox.shrink();
+  }
+
+  _buildBtnTextDefaultButton({String btn = '', Function onTap}) {
+    return MTextFieldTrailingButton.text(
+      child: Text(
+        btn,
+        style: MTextStyles.bold[16].copyWith(
+          color: MColors.blue[800],
+        ),
+      ),
+      onTap: onTap,
+    );
   }
 
   _buildErrorMessage() {
