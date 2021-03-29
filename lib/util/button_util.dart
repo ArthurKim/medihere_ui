@@ -28,6 +28,19 @@ class ButtonUtil {
     }
   }
 
+  static sizeToSolidYellowStyle(ButtonSize size) {
+    switch (size) {
+      case ButtonSize.xl:
+        return MButtonStyles.solidYellowXL;
+      case ButtonSize.lg:
+        return MButtonStyles.solidYellowL;
+      case ButtonSize.md:
+        return MButtonStyles.solidYellowM;
+      case ButtonSize.sm:
+        return MButtonStyles.solidYellowS;
+    }
+  }
+
   static sizeToOutlinedBlueStyle(ButtonSize size) {
     switch (size) {
       case ButtonSize.xl:

@@ -33,6 +33,8 @@ class MColors {
   });
 
   static const yellow = MaterialColor(0xFFFFCA28, {
+    /// kakaOButtonColor
+    10: const Color(0xFFFEE500),
     50: const Color(0xFFFFF8E1),
     100: const Color(0xFFFFECB3),
     200: const Color(0xFFFFE082),

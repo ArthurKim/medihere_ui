@@ -47,6 +47,49 @@ class MButtonStyles {
     ),
   );
 
+  static final ButtonStyle _solidYellow = ButtonStyle(
+    foregroundColor: MaterialStateProperty.all(Colors.white),
+    backgroundColor: MaterialStateProperty.resolveWith(
+      (states) {
+        if (states.contains(MaterialState.disabled)) {
+          return MColors.gray[80];
+        } else {
+          return MColors.yellow[10];
+        }
+      },
+    ),
+    overlayColor: MaterialStateProperty.all(MColors.yellow[700]),
+  );
+  static final solidYellowXL = _solidYellow.copyWith(
+    padding: MaterialStateProperty.all(
+      const EdgeInsets.symmetric(vertical: 7, horizontal: 16),
+    ),
+    textStyle: MaterialStateProperty.all(MTextStyles.black[21]),
+  );
+  static final solidYellowL = _solidYellow.copyWith(
+    padding: MaterialStateProperty.all(
+      const EdgeInsets.symmetric(vertical: 5, horizontal: 16),
+    ),
+    textStyle: MaterialStateProperty.all(MTextStyles.black[18]),
+  );
+  static final solidYellowM = _solidYellow.copyWith(
+    padding: MaterialStateProperty.all(
+      const EdgeInsets.symmetric(vertical: 2, horizontal: 16),
+    ),
+    textStyle: MaterialStateProperty.all(MTextStyles.black[16]),
+  );
+  static final solidYellowS = _solidYellow.copyWith(
+    padding: MaterialStateProperty.all(
+      const EdgeInsets.symmetric(vertical: 0, horizontal: 16),
+    ),
+    textStyle: MaterialStateProperty.all(MTextStyles.black[14]),
+    shape: MaterialStateProperty.all(
+      RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
+    ),
+  );
+
   static final ButtonStyle _outlinedBlue = ButtonStyle(
     padding: MaterialStateProperty.all(
       const EdgeInsets.symmetric(horizontal: 16),

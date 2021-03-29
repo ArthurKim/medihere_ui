@@ -28,6 +28,19 @@ class MSolidButton extends StatefulWidget {
     );
   }
 
+  factory MSolidButton.yellow(
+      {Key key,
+      @required ButtonSize size,
+      @required Widget child,
+      void Function() onPressed}) {
+    return MSolidButton._(
+      size: size,
+      child: child,
+      style: ButtonUtil.sizeToSolidYellowStyle(size),
+      onPressed: onPressed,
+    );
+  }
+
   @override
   _MSolidButtonState createState() => _MSolidButtonState();
 }
