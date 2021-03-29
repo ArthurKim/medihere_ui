@@ -87,18 +87,6 @@ class _MTextFieldBorderHorizontalState
                   ),
                 ],
               ),
-              // prefixIcon: Container(
-              //   //width: 40,
-              //   padding: const EdgeInsets.only(right:29.0),
-              //   alignment: Alignment.centerLeft,
-              //   child: Text(
-              //     widget.label,
-              //     style: MTextStyles.bold[14].copyWith(
-              //       color: MColors.gray[600],
-              //     ),
-              //     textAlign: TextAlign.left,
-              //   ),
-              // ),
               contentPadding:
                   EdgeInsets.only(top: 4, bottom: 7, left: 4, right: 4),
               errorBorder: UnderlineInputBorder(
