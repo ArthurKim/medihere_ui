@@ -54,7 +54,7 @@ class MButtonStyles {
         if (states.contains(MaterialState.disabled)) {
           return MColors.gray[80];
         } else {
-          return MColors.yellow[10];
+          return MColors.yellow[500];
         }
       },
     ),
@@ -79,6 +79,49 @@ class MButtonStyles {
     textStyle: MaterialStateProperty.all(MTextStyles.black[16]),
   );
   static final solidYellowS = _solidYellow.copyWith(
+    padding: MaterialStateProperty.all(
+      const EdgeInsets.symmetric(vertical: 0, horizontal: 16),
+    ),
+    textStyle: MaterialStateProperty.all(MTextStyles.black[14]),
+    shape: MaterialStateProperty.all(
+      RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
+    ),
+  );
+
+  static final ButtonStyle _solidKakao = ButtonStyle(
+    foregroundColor: MaterialStateProperty.all(Colors.white),
+    backgroundColor: MaterialStateProperty.resolveWith(
+      (states) {
+        if (states.contains(MaterialState.disabled)) {
+          return MColors.gray[80];
+        } else {
+          return const Color(0xFFFEE500); //MColors.yellow[10];
+        }
+      },
+    ),
+    overlayColor: MaterialStateProperty.all(MColors.yellow[500]),
+  );
+  static final solidKakaoXL = _solidKakao.copyWith(
+    padding: MaterialStateProperty.all(
+      const EdgeInsets.symmetric(vertical: 7, horizontal: 16),
+    ),
+    textStyle: MaterialStateProperty.all(MTextStyles.black[21]),
+  );
+  static final solidKakaoL = _solidKakao.copyWith(
+    padding: MaterialStateProperty.all(
+      const EdgeInsets.symmetric(vertical: 5, horizontal: 16),
+    ),
+    textStyle: MaterialStateProperty.all(MTextStyles.black[18]),
+  );
+  static final solidKakaoM = _solidKakao.copyWith(
+    padding: MaterialStateProperty.all(
+      const EdgeInsets.symmetric(vertical: 2, horizontal: 16),
+    ),
+    textStyle: MaterialStateProperty.all(MTextStyles.black[16]),
+  );
+  static final solidKakaoS = _solidKakao.copyWith(
     padding: MaterialStateProperty.all(
       const EdgeInsets.symmetric(vertical: 0, horizontal: 16),
     ),

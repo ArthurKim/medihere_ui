@@ -41,6 +41,19 @@ class ButtonUtil {
     }
   }
 
+  static sizeToSolidKakaoStyle(ButtonSize size) {
+    switch (size) {
+      case ButtonSize.xl:
+        return MButtonStyles.solidKakaoXL;
+      case ButtonSize.lg:
+        return MButtonStyles.solidKakaoL;
+      case ButtonSize.md:
+        return MButtonStyles.solidKakaoM;
+      case ButtonSize.sm:
+        return MButtonStyles.solidKakaoS;
+    }
+  }
+
   static sizeToOutlinedBlueStyle(ButtonSize size) {
     switch (size) {
       case ButtonSize.xl:
