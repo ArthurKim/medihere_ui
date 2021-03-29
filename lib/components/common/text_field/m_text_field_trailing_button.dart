@@ -43,9 +43,7 @@ class _MTextFieldTrailingButtonState extends State<MTextFieldTrailingButton> {
           alignment: Alignment.center,
           width: widget.width,
           height: widget.height,
-          child: SizedBox(
-            width: 20,
-            height: 20,
+          child: Center(
             child: widget.child,
           ),
         ),
