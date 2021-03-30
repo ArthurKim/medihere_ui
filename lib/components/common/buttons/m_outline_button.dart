@@ -31,11 +31,14 @@ class MOutlinedButton extends StatefulWidget {
       {Key key,
       @required ButtonSize size,
       @required Widget child,
+      ButtonStyle buttonStyle = const ButtonStyle(),
       void Function() onPressed}) {
     return MOutlinedButton._(
       size: size,
       child: child,
-      style: ButtonUtil.sizeToOutlinedGrayStyle(size),
+      style: buttonStyle == ButtonStyle()
+          ? ButtonUtil.sizeToOutlinedGrayStyle(size)
+          : buttonStyle,
       onPressed: onPressed,
     );
   }
