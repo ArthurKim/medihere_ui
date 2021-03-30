@@ -48,7 +48,6 @@ class _MOutlinedButtonState extends State<MOutlinedButton> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      alignment: Alignment.center,
       height: ButtonUtil.sizeToLp(widget.size),
       child: OutlinedButton(
         style: widget.style,
