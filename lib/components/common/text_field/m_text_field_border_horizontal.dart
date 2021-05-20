@@ -7,6 +7,7 @@ class MTextFieldBorderHorizontal extends StatefulWidget {
   final String placeholder;
   final TextFieldDirection direction;
   final FocusNode focusNode;
+  final TextInputType keyboardInputType;
 
   MTextFieldBorderHorizontal._(
       {Key key,
@@ -14,7 +15,8 @@ class MTextFieldBorderHorizontal extends StatefulWidget {
       this.label,
       this.placeholder,
       this.direction,
-      this.focusNode})
+      this.focusNode,
+      this.keyboardInputType})
       : super(key: key);
 
   factory MTextFieldBorderHorizontal.vertical({
@@ -23,6 +25,7 @@ class MTextFieldBorderHorizontal extends StatefulWidget {
     String label,
     String placeholder,
     FocusNode focusNode,
+    TextInputType keyboardInputType,
   }) {
     return MTextFieldBorderHorizontal._(
       key: key,
@@ -31,6 +34,7 @@ class MTextFieldBorderHorizontal extends StatefulWidget {
       placeholder: placeholder,
       direction: TextFieldDirection.vertical,
       focusNode: focusNode,
+      keyboardInputType: keyboardInputType,
     );
   }
 
@@ -40,6 +44,7 @@ class MTextFieldBorderHorizontal extends StatefulWidget {
     String label,
     String placeholder,
     FocusNode focusNode,
+    TextInputType keyboardInputType,
   }) {
     return MTextFieldBorderHorizontal._(
       key: key,
@@ -48,6 +53,7 @@ class MTextFieldBorderHorizontal extends StatefulWidget {
       placeholder: placeholder,
       direction: TextFieldDirection.horizontal,
       focusNode: focusNode,
+      keyboardInputType: keyboardInputType,
     );
   }
 
@@ -72,6 +78,7 @@ class _MTextFieldBorderHorizontalState
         child: AbsorbPointer(
           absorbing: !widget.focusNode.hasFocus,
           child: TextField(
+            keyboardType: widget.keyboardInputType,
             focusNode: widget.focusNode,
             style: MTextStyles.bold[21].copyWith(color: MTextColors.primary),
             decoration: InputDecoration(
