@@ -161,6 +161,7 @@ class _MTextFieldRectState extends State<MTextFieldRect> {
                               vertical: 9,
                               horizontal: 12,
                             ),
+                            hintText: widget.placeholder,
                           ),
                         ),
                       ),
