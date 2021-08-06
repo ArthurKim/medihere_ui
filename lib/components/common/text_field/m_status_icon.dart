@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class MStatusIcon extends StatefulWidget {
   final Widget child;
-  final void Function() onTap;
+  final void Function()? onTap;
 
-  MStatusIcon({Key key, this.child, this.onTap}) : super(key: key);
+  MStatusIcon({Key? key, required this.child, this.onTap}) : super(key: key);
 
   @override
   _MStatusIconState createState() => _MStatusIconState();

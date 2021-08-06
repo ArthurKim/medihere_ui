@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:medihere_ui/medihere_ui.dart';
 
 class MHeader extends StatefulWidget {
-  final Widget leading;
+  final Widget? leading;
   final Widget content;
-  final Widget trailing;
+  final Widget? trailing;
 
-  MHeader({this.leading, @required this.content, this.trailing});
+  MHeader({this.leading, required this.content, this.trailing});
 
   @override
   _MHeaderState createState() => _MHeaderState();
@@ -23,7 +23,7 @@ class _MHeaderState extends State<MHeader> {
             border: Border(
               bottom: BorderSide(
                 width: 1,
-                color: MColors.gray[80],
+                color: MColors.gray[80]!,
               ),
             ),
           ),

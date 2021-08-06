@@ -10,26 +10,26 @@ class MTextFieldRect extends StatefulWidget {
   final String label;
   final String placeholder;
   final TextFieldStatus status;
-  final String error;
+  final String? error;
   final String btnName;
-  final bool obscure;
+  final bool? obscure;
   final bool enabled;
-  final void Function() onEditingCompleted;
-  final void Function(String) onChanged;
-  final void Function() onSubmitted;
+  final void Function()? onEditingCompleted;
+  final void Function(String)? onChanged;
+  final void Function()? onSubmitted;
 
   MTextFieldRect(
-      {Key key,
-      @required this.focusNode,
+      {Key? key,
+      required this.focusNode,
       this.onEditingCompleted,
       this.onSubmitted,
       this.onChanged,
-      @required this.label,
-      @required this.placeholder,
+      required this.label,
+      required this.placeholder,
       this.status = TextFieldStatus.normal,
       this.enabled = true,
       this.error,
-      this.controller,
+      required this.controller,
       this.obscure,
       this.btnName = ''})
       : super(key: key);
@@ -39,12 +39,12 @@ class MTextFieldRect extends StatefulWidget {
 }
 
 class _MTextFieldRectState extends State<MTextFieldRect> {
-  Color _borderColor;
-  BoxShadow _boxShadow;
+  Color? _borderColor;
+  BoxShadow? _boxShadow;
 
-  bool _showClearButton;
-  bool _enableInkWell;
-  bool _obscured;
+  bool? _showClearButton;
+  bool? _enableInkWell;
+  bool? _obscured;
 
   _onHighlightChanged(highlight) {
     if (_notError()) {
@@ -86,7 +86,7 @@ class _MTextFieldRectState extends State<MTextFieldRect> {
             blurRadius: 4,
             spreadRadius: 1,
             offset: Offset(0, 2),
-            color: MColors.gray[900].withOpacity(0.1),
+            color: MColors.gray[900]!.withOpacity(0.1),
           );
           if (widget.status != TextFieldStatus.error)
             _borderColor = MColors.blue[500];
@@ -118,9 +118,9 @@ class _MTextFieldRectState extends State<MTextFieldRect> {
           duration: Duration(milliseconds: 200),
           curve: Curves.ease,
           decoration: BoxDecoration(
-            border: Border.all(color: _borderColor, width: 1),
+            border: Border.all(color: _borderColor!, width: 1),
             borderRadius: BorderRadius.circular(8),
-            boxShadow: _boxShadow != null ? [_boxShadow] : null,
+            boxShadow: _boxShadow != null ? [_boxShadow!] : null,
             color: widget.enabled ? Colors.white : MColors.gray[60],
           ),
           child: AbsorbPointer(
@@ -128,8 +128,9 @@ class _MTextFieldRectState extends State<MTextFieldRect> {
             child: Material(
               type: MaterialType.transparency,
               child: InkWell(
-                onHighlightChanged: _enableInkWell ? _onHighlightChanged : null,
-                onTap: _enableInkWell
+                onHighlightChanged:
+                    _enableInkWell! ? _onHighlightChanged : null,
+                onTap: _enableInkWell!
                     ? () => widget.focusNode.requestFocus()
                     : null,
                 highlightColor: Colors.transparent,
@@ -141,18 +142,18 @@ class _MTextFieldRectState extends State<MTextFieldRect> {
                   children: [
                     Expanded(
                       child: AbsorbPointer(
-                        absorbing: _enableInkWell,
+                        absorbing: _enableInkWell!,
                         child: TextField(
                           onEditingComplete: widget.onEditingCompleted,
                           onChanged: widget.onChanged,
                           onSubmitted: widget.onChanged,
-                          obscureText: _obscured,
+                          obscureText: _obscured!,
                           controller: widget.controller,
                           focusNode: widget.focusNode,
                           textInputAction: TextInputAction.next,
                           style: widget.enabled
                               ? MTextStyles.bold[21]
-                              : MTextStyles.bold[21].copyWith(
+                              : MTextStyles.bold[21]!.copyWith(
                                   color: MColors.gray[200],
                                 ),
                           decoration: InputDecoration(
@@ -208,7 +209,7 @@ class _MTextFieldRectState extends State<MTextFieldRect> {
   }
 
   _buildClearButton() {
-    if (_showClearButton)
+    if (_showClearButton!)
       return MTextFieldTrailingButton.image(
         onTap: () => widget.controller.clear(),
         child: Image.asset(
@@ -224,11 +225,13 @@ class _MTextFieldRectState extends State<MTextFieldRect> {
       return MTextFieldTrailingButton.image(
         onTap: () {
           setState(() {
-            _obscured = !_obscured;
+            _obscured = !_obscured!;
           });
         },
         child: Icon(
-          _obscured ? Icons.visibility_off_outlined : Icons.visibility_outlined,
+          _obscured!
+              ? Icons.visibility_off_outlined
+              : Icons.visibility_outlined,
           size: 20,
           color: MColors.gray[200],
         ),
@@ -237,11 +240,12 @@ class _MTextFieldRectState extends State<MTextFieldRect> {
       return SizedBox.shrink();
   }
 
-  _buildBtnTextDefaultButton({String btn = '', Function onTap}) {
+  _buildBtnTextDefaultButton(
+      {String btn = '', required void Function() onTap}) {
     return MTextFieldTrailingButton.text(
       child: Text(
         btn,
-        style: MTextStyles.bold[16].copyWith(
+        style: MTextStyles.bold[16]!.copyWith(
           color: MColors.blue[800],
         ),
       ),
@@ -252,8 +256,8 @@ class _MTextFieldRectState extends State<MTextFieldRect> {
   _buildErrorMessage() {
     return widget.error != null
         ? Text(
-            widget.error,
-            style: MTextStyles.regular[12].copyWith(
+            widget.error!,
+            style: MTextStyles.regular[12]!.copyWith(
               color: MColors.red[700],
             ),
           )

@@ -8,18 +8,18 @@ class MSolidButton extends StatefulWidget {
   final ButtonStyle style;
 
   const MSolidButton._({
-    Key key,
-    @required this.size,
-    @required this.child,
-    @required this.style,
-    this.onPressed,
+    Key? key,
+    required this.size,
+    required this.child,
+    required this.style,
+    required this.onPressed,
   }) : super(key: key);
 
   factory MSolidButton.blue(
-      {Key key,
-      @required ButtonSize size,
-      @required Widget child,
-      void Function() onPressed}) {
+      {Key? key,
+      required ButtonSize size,
+      required Widget child,
+      required void Function() onPressed}) {
     return MSolidButton._(
       size: size,
       child: child,
@@ -29,10 +29,10 @@ class MSolidButton extends StatefulWidget {
   }
 
   factory MSolidButton.yellow(
-      {Key key,
-      @required ButtonSize size,
-      @required Widget child,
-      void Function() onPressed}) {
+      {Key? key,
+      required ButtonSize size,
+      required Widget child,
+      required void Function() onPressed}) {
     return MSolidButton._(
       size: size,
       child: child,
@@ -42,10 +42,10 @@ class MSolidButton extends StatefulWidget {
   }
 
   factory MSolidButton.kakao(
-      {Key key,
-      @required ButtonSize size,
-      @required Widget child,
-      void Function() onPressed}) {
+      {Key? key,
+      required ButtonSize size,
+      required Widget child,
+      required void Function() onPressed}) {
     return MSolidButton._(
       size: size,
       child: child,

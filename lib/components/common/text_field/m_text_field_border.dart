@@ -6,23 +6,23 @@ class MTextFieldBorder extends StatefulWidget {
   final String label;
   final String placeholder;
   final TextFieldDirection direction;
-  final FocusNode focusNode;
+  final FocusNode? focusNode;
 
   MTextFieldBorder._(
-      {Key key,
-      this.controller,
-      this.label,
-      this.placeholder,
-      this.direction,
+      {Key? key,
+      required this.controller,
+      required this.label,
+      required this.placeholder,
+      required this.direction,
       this.focusNode})
       : super(key: key);
 
   factory MTextFieldBorder.vertical({
-    Key key,
-    TextEditingController controller,
-    String label,
-    String placeholder,
-    FocusNode focusNode,
+    Key? key,
+    required TextEditingController controller,
+    required String label,
+    required String placeholder,
+    FocusNode? focusNode,
   }) {
     return MTextFieldBorder._(
       key: key,
@@ -35,11 +35,11 @@ class MTextFieldBorder extends StatefulWidget {
   }
 
   factory MTextFieldBorder.horizontal({
-    Key key,
-    TextEditingController controller,
-    String label,
-    String placeholder,
-    FocusNode focusNode,
+    Key? key,
+    required TextEditingController controller,
+    required String label,
+    required String placeholder,
+    FocusNode? focusNode,
   }) {
     return MTextFieldBorder._(
       key: key,
@@ -64,47 +64,47 @@ class _MTextFieldBorderState extends State<MTextFieldBorder> {
         children: [
           Text(
             widget.label,
-            style: MTextStyles.bold[14].copyWith(
+            style: MTextStyles.bold[14]!.copyWith(
               color: MColors.gray[600],
             ),
             textAlign: TextAlign.left,
           ),
           InkWell(
-            onTap: widget.focusNode.hasFocus
+            onTap: widget.focusNode!.hasFocus
                 ? null
-                : () => widget.focusNode.requestFocus(),
+                : () => widget.focusNode!.requestFocus(),
             focusColor: Colors.white,
             hoverColor: Colors.white,
             highlightColor: Colors.white,
             splashColor: Colors.black.withAlpha(25),
             child: AbsorbPointer(
-              absorbing: !widget.focusNode.hasFocus,
+              absorbing: !widget.focusNode!.hasFocus,
               child: TextField(
                 focusNode: widget.focusNode,
                 style:
-                    MTextStyles.bold[21].copyWith(color: MTextColors.primary),
+                    MTextStyles.bold[21]!.copyWith(color: MTextColors.primary),
                 decoration: InputDecoration(
                   contentPadding:
                       EdgeInsets.only(top: 4, bottom: 7, left: 4, right: 4),
                   errorBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: MColors.red[700]),
+                    borderSide: BorderSide(color: MColors.red[700]!),
                   ),
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
-                      color: MColors.gray[200],
+                      color: MColors.gray[200]!,
                     ),
                   ),
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
-                      color: MColors.blue[500],
+                      color: MColors.blue[500]!,
                     ),
                   ),
                   focusedErrorBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
-                      color: MColors.red[700],
+                      color: MColors.red[700]!,
                     ),
                   ),
-                  hintStyle: MTextStyles.bold[21].copyWith(
+                  hintStyle: MTextStyles.bold[21]!.copyWith(
                     color: MColors.gray[100],
                   ),
                   hintText: widget.placeholder,

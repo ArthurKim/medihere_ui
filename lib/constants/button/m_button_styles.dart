@@ -139,9 +139,9 @@ class MButtonStyles {
     ),
     side: MaterialStateProperty.resolveWith((states) {
       if (states.contains(MaterialState.disabled)) {
-        return BorderSide(color: MColors.gray[80]);
+        return BorderSide(color: MColors.gray[80]!);
       } else {
-        return BorderSide(color: MColors.blue[800]);
+        return BorderSide(color: MColors.blue[800]!);
       }
     }),
     foregroundColor: MaterialStateProperty.resolveWith(
@@ -192,9 +192,9 @@ class MButtonStyles {
     ),
     side: MaterialStateProperty.resolveWith((states) {
       if (states.contains(MaterialState.disabled)) {
-        return BorderSide(color: MColors.gray[80]);
+        return BorderSide(color: MColors.gray[80]!);
       } else {
-        return BorderSide(color: MColors.gray[600]);
+        return BorderSide(color: MColors.gray[600]!);
       }
     }),
     foregroundColor: MaterialStateProperty.resolveWith(

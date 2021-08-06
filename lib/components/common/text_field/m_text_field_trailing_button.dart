@@ -6,12 +6,14 @@ class MTextFieldTrailingButton extends StatefulWidget {
   final double width;
   final double height;
 
-  MTextFieldTrailingButton.image({Key key, this.child, this.onTap})
+  MTextFieldTrailingButton.image(
+      {Key? key, required this.child, required this.onTap})
       : this.width = 32,
         this.height = 46,
         super(key: key);
 
-  MTextFieldTrailingButton.text({Key key, this.child, this.onTap})
+  MTextFieldTrailingButton.text(
+      {Key? key, required this.child, required this.onTap})
       : this.width = 48,
         this.height = 46,
         super(key: key);
@@ -22,7 +24,7 @@ class MTextFieldTrailingButton extends StatefulWidget {
 }
 
 class _MTextFieldTrailingButtonState extends State<MTextFieldTrailingButton> {
-  FocusNode _focusNode;
+  late FocusNode _focusNode;
 
   @override
   void initState() {

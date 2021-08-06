@@ -4,7 +4,7 @@ class MPage extends StatelessWidget {
   final Widget appBar;
   final Widget body;
 
-  const MPage({Key key, @required this.appBar, @required this.body})
+  const MPage({Key? key, required this.appBar, required this.body})
       : super(key: key);
 
   @override

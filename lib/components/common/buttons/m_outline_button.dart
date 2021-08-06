@@ -8,18 +8,18 @@ class MOutlinedButton extends StatefulWidget {
   final ButtonStyle style;
 
   const MOutlinedButton._({
-    Key key,
-    @required this.size,
-    @required this.child,
-    @required this.style,
-    this.onPressed,
+    Key? key,
+    required this.size,
+    required this.child,
+    required this.style,
+    required this.onPressed,
   }) : super(key: key);
 
   factory MOutlinedButton.blue(
-      {Key key,
-      @required ButtonSize size,
-      @required Widget child,
-      void Function() onPressed}) {
+      {Key? key,
+      required ButtonSize size,
+      required Widget child,
+      required void Function() onPressed}) {
     return MOutlinedButton._(
       size: size,
       child: child,
@@ -28,11 +28,11 @@ class MOutlinedButton extends StatefulWidget {
     );
   }
   factory MOutlinedButton.gray(
-      {Key key,
-      @required ButtonSize size,
-      @required Widget child,
+      {Key? key,
+      required ButtonSize size,
+      required Widget child,
       ButtonStyle buttonStyle = const ButtonStyle(),
-      void Function() onPressed}) {
+      required void Function() onPressed}) {
     return MOutlinedButton._(
       size: size,
       child: child,

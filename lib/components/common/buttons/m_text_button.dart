@@ -8,11 +8,11 @@ class MTextButton extends StatefulWidget {
   final ButtonStyle style;
 
   MTextButton._(
-      {Key key,
-      void Function() onPressed,
-      @required ButtonSize size,
-      @required Widget child,
-      @required ButtonStyle style})
+      {Key? key,
+      required void Function() onPressed,
+      required ButtonSize size,
+      required Widget child,
+      required ButtonStyle style})
       : onPressed = onPressed,
         size = size,
         child = child,
@@ -20,10 +20,10 @@ class MTextButton extends StatefulWidget {
         super(key: key);
 
   factory MTextButton.blue({
-    Key key,
-    void Function() onPressed,
-    @required ButtonSize size,
-    @required Widget child,
+    Key? key,
+    required void Function() onPressed,
+    required ButtonSize size,
+    required Widget child,
   }) {
     return MTextButton._(
       onPressed: onPressed,
@@ -34,10 +34,10 @@ class MTextButton extends StatefulWidget {
   }
 
   factory MTextButton.red(
-      {Key key,
-      void Function() onPressed,
-      @required ButtonSize size,
-      @required Widget child}) {
+      {Key? key,
+      required void Function() onPressed,
+      required ButtonSize size,
+      required Widget child}) {
     return MTextButton._(
       onPressed: onPressed,
       size: size,
@@ -47,10 +47,10 @@ class MTextButton extends StatefulWidget {
   }
 
   factory MTextButton.gray(
-      {Key key,
-      void Function() onPressed,
-      @required ButtonSize size,
-      @required Widget child}) {
+      {Key? key,
+      required void Function() onPressed,
+      required ButtonSize size,
+      required Widget child}) {
     return MTextButton._(
       onPressed: onPressed,
       size: size,
